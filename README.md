@@ -6,7 +6,7 @@ ImageForge allows users to upload images, apply real-time adjustments, use cinem
 
 ## Preview
 
-![ImageForge UI](assets/screenshots/editor-ui.png)
+![ImageForge UI](assets/screenshots/editor-UI.png)
 
 ## Features
 
@@ -57,7 +57,7 @@ Generates and downloads edited images as PNG files directly from the browser.
 
 ### Editor Interface
 
-![Editor](assets/screenshots/editor-ui.png)
+![Editor](assets/screenshots/editor-UI.png)
 
 ### Preset System
 
