@@ -4,6 +4,14 @@ A modern browser-based image editor built with HTML, CSS, and Vanilla JavaScript
 
 ImageForge allows users to upload images, apply real-time adjustments, use cinematic presets, inspect image metadata, and export edited images directly from the browser without relying on external services.
 
+## URL
+
+Live Preview:
+
+```bash
+URL  https://sherakram.github.io/imageforge-web-editor/
+```
+
 ## Preview
 
 ![ImageForge UI](assets/screenshots/editor-UI.png)
@@ -72,7 +80,7 @@ Generates and downloads edited images as PNG files directly from the browser.
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/imageforge-web-editor.git
+git clone https://github.com/sherakram/imageforge-web-editor.git
 ```
 
 Open the project folder and launch:
