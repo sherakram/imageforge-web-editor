@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ImageForge | Web Image Editor</title>
+
+    <meta property="og:image" content="assets/preview.png" />
+    <meta property="og:title" content="ImageForge" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Modern browser-based image editor built with HTML, CSS, and JavaScript."
+    />
+
+    <meta
+      name="description"
+      content="ImageForge is a modern web-based image editor that allows users to apply filters, adjust images, and export edited photos directly from the browser."
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="variable.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="ig-wrap">
+          <div class="ig-left">
+            <div class="ig-toolbar">
+              <span class="ig-logo">Image<span>Forge</span></span>
+              <label for="image-input" class="upload-btn ig-tbtn">
+                Upload file
+                <input type="file" id="image-input" accept="image/*" hidden />
+              </label>
+              <button class="ig-tbtn" id="reset-btn">Reset</button>
+              <div style="flex: 1"></div>
+              <button class="ig-tbtn primary" id="export-btn">Export PNG</button>
+            </div>
+
+            <div class="ig-canvas">
+              <div class="ig-canvas-grid"></div>
+              <div class="ig-corner tl"></div>
+              <div class="ig-corner tr"></div>
+              <div class="ig-corner bl"></div>
+              <div class="ig-corner br"></div>
+              <div class="ig-placeholder">
+                <svg
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  stroke-width="1.5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect x="6" y="14" width="52" height="38" rx="4"></rect>
+                  <circle cx="22" cy="27" r="5"></circle>
+                  <path d="M6 38l14-10 10 8 8-6 20 12"></path>
+                  <path
+                    d="M44 8l4 4-4 4M50 12H38"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+                <p>Drop image or click Upload</p>
+              </div>
+              <canvas id="ig-canvas"></canvas>
+            </div>
+
+            <div class="ig-status-bar">
+              <div class="ig-status-dot"></div>
+              <span class="ig-status-text">No image loaded</span>
+              <div style="flex: 1"></div>
+              <span class="ig-status-dim">— × —</span>
+            </div>
+          </div>
+
+          <div class="ig-right">
+            <div class="ig-tabs">
+              <button class="ig-tab active">Adjust</button>
+              <button class="ig-tab">Presets</button>
+              <button class="ig-tab">Info</button>
+            </div>
+
+            <div class="ig-panel" id="ig-panel">
+              <div class="ig-panel-section" data-section="tone">
+                <div class="ig-section-label">Tone</div>
+              </div>
+
+              <div class="ig-divider"></div>
+
+              <div class="ig-panel-section" data-section="effects">
+                <div class="ig-section-label">Effects</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- <div class="left">
+                    <div class="top">
+                        <label for="image-input" class="btn">
+                            Upload file
+                            <input type="file" id="image-input" accept="image/*" hidden>
+                        </label>
+                        <button class="btn" id="reset-btn">Reset</button>
+                        <button class="btn" id="export-btn">Export</button>
+                    </div>
+                    <div class="bottom">
+                        <i class="ri-image-ai-line"></i>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="filter">
+                        <h2>Filters</h2>
+
+                        <p>Brightness</p>
+                        <input name="brightness" value="100" type="range" min="0" max="200">
+
+                        <p>Contrast</p>
+                        <input name="contrast" value="100" type="range" min="0" max="200">
+
+                        <p>Exposure</p>
+                        <input name="exposure" value="100" type="range" min="0" max="200">
+
+                        <p>Saturation</p>
+                        <input name="saturation" value="100" type="range" min="0" max="200">
+
+                        <p>Hue Rotate</p>
+                        <input name="huerotate" value="0" type="range" min="0" max="200">
+
+                        <p>Blur</p>
+                        <input name="blur" value="0" type="range" min="0" max="200">
+
+                        <p>Grayscale</p>
+                        <input name="grayscale" value="0" type="range" min="0" max="200">
+
+                        <p>Sepia</p>
+                        <input name="sepia" value="0" type="range" min="0" max="200">
+
+                        <p>Opacity</p>
+                        <input name="opacity" value="200" type="range" min="0" max="200">
+
+                        <p>Invert</p>
+                        <input name="invert" value="0" type="range" min="0" max="200">
+                    </div>
+
+                    <div class="preset">
+                        <h2>Presets</h2>
+                        <div class="preset-btn__container">
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                            <button class="preset-btn">Vintage</button>
+                        </div>
+                    </div>
+                </div> -->
